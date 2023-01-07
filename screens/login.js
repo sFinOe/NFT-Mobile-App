@@ -34,7 +34,7 @@ const Login = () => {
 
 	  <View  style={styles.inputContainer}>
 		<TextInput style={styles.login_input} 
-		placeholder={"Email"} value={email} onChangeText={text => setEmail(text)} />
+		placeholder={"Email"} alue={email} onChangeText={text => setEmail(text)} />
 		<TextInput style={styles.login_input} 
 		placeholder={"Password"} value={password} onChangeText={text => setPassword(text)} 
 		secureTextEntry />
