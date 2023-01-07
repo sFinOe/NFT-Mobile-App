@@ -34,9 +34,9 @@ const Login = () => {
 
 	  <View  style={styles.inputContainer}>
 		<TextInput style={styles.login_input} 
-		placeholder={"Email"} value={email} OnChangeText={text => setEmail(text)} />
+		placeholder={"Email"} value={email} onChangeText={text => setEmail(text)} />
 		<TextInput style={styles.login_input} 
-		placeholder={"Password"} value={password} OnChangeText={text => setPassword(text)} 
+		placeholder={"Password"} value={password} onChangeText={text => setPassword(text)} 
 		secureTextEntry />
 		<View Style={styles.signin_submit}>
 		<TouchableOpacity onPress={handlesignin} 
