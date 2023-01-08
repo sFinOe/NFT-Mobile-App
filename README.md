@@ -30,13 +30,11 @@ git clone https://github.com/sFinOe/UI-Mobile-App.git
 - Install the dependencies
 ```
 npm install
-
 ```
 - Run the app
 
 ```
 npm start
-
 ```
 
 # Resources
