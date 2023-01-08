@@ -4,7 +4,7 @@ import Task from './components/Task';
 import React, { useState } from 'react';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createNativeStackNavigator, createStackNavigator } from '@react-navigation/native-stack';
-import home from './screens/home';
+import Home from './screens/home';
 import Login from './screens/login';
 
 export default function App() {
@@ -29,7 +29,8 @@ const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer sytle={styles.container}>
       <Stack.Navigator>
-        <Stack.Screen options={ {headerShown: false} } name="Login" component={Login} />
+        <Stack.Screen  options={{headerShown: false}} name="Login" component={Login} />
+        <Stack.Screen  name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
 //     <View style={styles.container}>

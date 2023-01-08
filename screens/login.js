@@ -1,12 +1,28 @@
 import { StyleSheet, Text, View, KeyboardAvoidingView , TouchableOpacity} from 'react-native'
-import React, { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
+import React, { useState, useEffect} from 'react'
 import { TextInput } from 'react-native-gesture-handler'
 import { auth } from '../db_firebase'
 
 const Login = () => {
 
+	const navigation = useNavigation();
+
+	// useState is a hook that allows you to use state in function components
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+
+	/*useEffect is a hook that allows you to perform side effects in function components.
+	It is called after the component renders, use can use [] as secound argument to call it once*/
+	useEffect(() => {
+		const unsub = auth.onAuthStateChanged((user) => {
+			if (user) {
+				navigation.replace("Home");
+			}
+		})
+		// if you leave the screen, unsubscribe from the listener
+		return unsub;
+	}, [])
 
 	const handlesignup = () => {
 		console.log("signing up");
@@ -34,7 +50,7 @@ const Login = () => {
 
 	  <View  style={styles.inputContainer}>
 		<TextInput style={styles.login_input} 
-		placeholder={"Email"} alue={email} onChangeText={text => setEmail(text)} />
+		placeholder={"Email"} value={email} onChangeText={text => setEmail(text)} />
 		<TextInput style={styles.login_input} 
 		placeholder={"Password"} value={password} onChangeText={text => setPassword(text)} 
 		secureTextEntry />
