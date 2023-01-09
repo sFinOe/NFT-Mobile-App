@@ -9,6 +9,7 @@ const Login = () => {
 	const navigation = useNavigation();
 
 	// useState is a hook that allows you to use state in function components
+	// [<getter>, <setter>] = useState(<initialValue>).
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 

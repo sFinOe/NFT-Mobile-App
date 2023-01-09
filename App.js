@@ -1,127 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity , ScrollView, Keyboard} from 'react-native';
-import Task from './components/Task';
-import React, { useState } from 'react';
-import { NavigationContainer, StackActions } from '@react-navigation/native';
-import { createNativeStackNavigator, createStackNavigator } from '@react-navigation/native-stack';
-import Home from './screens/home';
-import Login from './screens/login';
+import { StatusBar } from "expo-status-bar";
+import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView, Keyboard } from "react-native";
+import Task from "./components/Task";
+import React, { useState } from "react";
+import { NavigationContainer, StackActions, DefaultTheme } from "@react-navigation/native";
+import { createNativeStackNavigator, createStackNavigator } from "@react-navigation/native-stack";
+import { useFonts } from "expo-font";
+import Home from "./screens/Home";
+import Login from "./screens/login";
+import Details from "./screens/Details";
 
-export default function App() {
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: "transparent",
+  },
+};
 
-  const [task, setTask] = useState();
-  const [taskItems, setTaskItems] = useState([]);
+const App = () => {
+  /* Staring From Here !!!!!! */
 
-  const handleaddtask = () => {
-    Keyboard.dismiss();
-    setTaskItems([...taskItems, task])
-    setTask(null);
-}
+  const Stack = createNativeStackNavigator();
 
-  const deletetask = (index) => {
-    let itemsCopy = [...taskItems];
-    itemsCopy.splice(index, 1);
-    setTaskItems(itemsCopy);
-  }
+  const [loaded] = useFonts({
+    ABeeZee_Iutalic: require("./assets/fonts/ABeeZee-Italic.ttf"),
+    ABeeZee_Regular: require("./assets/fonts/ABeeZee-Regular.ttf"),
+    Akshar: require("./assets/fonts/Akshar-VariableFont_wght.ttf"),
+    Font_Awesome_5_Regular: require("./assets/fonts/Font-Awesome-5-Free-Regular-400.otf"),
+    Ponnala_Regular: require("./assets/fonts/Ponnala-Regular.ttf"),
+    Ubuntu_Italic: require("./assets/fonts/Ubuntu-Italic.ttf"),
+    Ubuntu_Regular: require("./assets/fonts/Ubuntu-Regular.ttf"),
+    Ubuntu_Medium: require("./assets/fonts/Ubuntu-Medium.ttf"),
+  });
 
-const Stack = createNativeStackNavigator();
+  if (!loaded) return null;
 
   return (
-    <NavigationContainer sytle={styles.container}>
-      <Stack.Navigator>
-        <Stack.Screen  options={{headerShown: false}} name="Login" component={Login} />
-        <Stack.Screen  name="Home" component={Home} />
+    <NavigationContainer theme={theme}>
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>
     </NavigationContainer>
-//     <View style={styles.container}>
-//     <View style={styles.tasksWrapper}>
-//       <Text style={styles.sectionTitle}>Today's tasks</Text>
-//       <View style={styles.items}>
-// <ScrollView>
-//         {/* This is where the tasks will go! */}
-//         {
-//           taskItems.map((item, index) => {
-//             return (<TouchableOpacity key={index} onPress={ () => deletetask(index)}>
-//               <Task text={item} />
-//             </TouchableOpacity>)
-//             return <Task key={index} text={item} />
-//           })
-//         }
-//         {/* <Task text={'My New Task To Go'}/>
-//         <Task text={'Tomorrow i need to push websrv'}/> */}
-//     </ScrollView>
-//       </View>
-//     </View>
-//     <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.writeTaskWrapper}>
-//       <TextInput style={styles.input} placeholder={'Write a task'} onChangeText={ text => setTask(text)} 
-//       value={task} 
-//       />
-//       <TouchableOpacity onPress={ () => handleaddtask() } > 
-//         <View style={styles.addWrapper}>
-//           <Text style={styles.addText}>+</Text>
-//         </View>
-//       </TouchableOpacity>
-//     </KeyboardAvoidingView>
-//     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#E8E6E6',
-  },
-  tasksWrapper : {
-    paddingTop: 80,
-    paddingHorizontal: 20,
+const styles = StyleSheet.create({});
 
-  },
-
-  sectionTitle : {
-
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom : 30,
-  },
-
-  items : {
-    marginTop: 30,
-  },
-
-  writeTaskWrapper : {
-    position: 'absolute',
-    bottom: 60,
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-
-  },
-
-  input : {
-    bottom : 0,
-    paddingVertical: 15,
-    paddingHorizontal: 15,
-    backgroundColor: '#fff',
-    borderRadius: 60,
-    borderColor: '#C0C0C0',
-    borderWidth: 1,
-    width: 250,
-  },
-  addWrapper : {
-    width: 60,
-    height: 60,
-    backgroundColor: '#fff',
-    borderRadius: 60,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderColor: '#C0C0C0',
-    borderWidth: 1,
-
-  },
-  addText : {
-
-
-  },
-
-  });
+export default App;
