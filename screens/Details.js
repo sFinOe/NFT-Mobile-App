@@ -2,7 +2,7 @@ import React from "react";
 import { Text } from "react-native";
 
 const Details = () => {
-  return <Text>Detialssss</Text>;
+  return <Text>NFT Details</Text>;
 };
 
 export default Details;

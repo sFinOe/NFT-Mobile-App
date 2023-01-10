@@ -4,7 +4,7 @@ export const NFTData = [
   {
     id: "NFT-01",
     name: "Red Hat Monkey #315",
-    creator: "By sFinOe",
+    creator: "sFinOe",
     price: 1.25,
     ending_time: "7h 24m",
     description:
@@ -37,7 +37,7 @@ export const NFTData = [
   {
     id: "NFT-02",
     name: "Cyber Monkey #251",
-    creator: "By sFinOe",
+    creator: "sFinOe",
     price: 3.76,
     ending_time: "2h 33m",
     description:
@@ -71,7 +71,7 @@ export const NFTData = [
   {
     id: "NFT-03",
     name: "Dark Wolf #743",
-    creator: "By sFinOe",
+    creator: "sFinOe",
     price: 2.52,
     ending_time: "12h 53m",
     description:

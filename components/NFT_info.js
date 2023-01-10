@@ -6,15 +6,45 @@ import assets from "../constants/assets";
 export const NFTtitle = ({ title, creator }) => {
   return (
     <View>
-      <Text>{title}</Text>
+      <Text
+        style={{
+          fontFamily: FONTS.Ubuntu_M,
+          fontSize: 17,
+          color: "#000",
+          paddingLeft: 15,
+          paddingBottom: 3,
+        }}
+      >
+        {title}
+      </Text>
+      <Text
+        style={{
+          fontFamily: FONTS.ABeeZee,
+          fontSize: 12,
+          color: "#464646",
+          paddingLeft: 15,
+        }}
+      >
+        By {creator}
+      </Text>
     </View>
   );
 };
 
-export const EthPrice = () => {
+export const EthPrice = ({ price }) => {
   return (
-    <View>
-      <Text>EthPrice</Text>
+    <View style={{ flexDirection: "row", alignItems: "center" }}>
+      <Image source={assets.ETH_icon} resizeMode="contain" style={{ width: 27, height: 27, marginLeft: 4 }} />
+      <Text
+        style={{
+          fontFamily: FONTS.Ubuntu_M,
+          fontSize: 15,
+          color: "#000",
+        }}
+      >
+        {" "}
+        {price}
+      </Text>
     </View>
   );
 };
@@ -97,7 +127,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 15,
     ...SHADOWS.light,
-    elevation: 4,
+    elevation: 6,
     maxWidth: "50%",
   },
 });

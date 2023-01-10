@@ -24,6 +24,9 @@ export const FONTS = {
   Ubuntu_M: "Ubuntu_Medium",
   Ubuntu_I: "Ubuntu_Italic",
   Akshar_M: "Akshar_Medium",
+  Font_Awesome_5_S: "Font_Awesome_5_Solid",
+  Font_Awesome_5_Brands: "Font_Awesome_5_Brands_Regular_400",
+  Ubuntu_Bold: "Ubuntu_Bold",
 };
 
 export const SHADOWS = {

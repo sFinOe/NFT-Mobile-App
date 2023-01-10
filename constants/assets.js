@@ -11,12 +11,14 @@ import valid_icon from "../assets/icons/valid_icon.png";
 /****** IMGAES ******/
 
 import nft_img_1 from "../assets/images/nft_img_1.jpg";
-import nft_img_2 from "../assets/images/nft_img_2.png";
+import nft_img_2 from "../assets/images/nft_img_2.jpg";
 import nft_img_3 from "../assets/images/nft_img_3.png";
 
 import user_1 from "../assets/images/user_1.png";
 import user_2 from "../assets/images/user_2.png";
 import user_3 from "../assets/images/user_3.png";
+
+import account_1 from "../assets/images/account-1.jpg";
 
 export default {
   ETH_icon,
@@ -32,4 +34,6 @@ export default {
   user_1,
   user_2,
   user_3,
+
+  account_1,
 };

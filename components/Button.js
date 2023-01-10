@@ -1,6 +1,35 @@
 import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 import React from "react";
-import { COLORS, NFTData, SHADOWS, SIZE } from "../constants";
+import { COLORS, FONTS, NFTData, SHADOWS, SIZE } from "../constants";
+
+export const BidButton = ({ handlePress, ...props }) => {
+  return (
+    <TouchableOpacity
+      onPress={handlePress}
+      style={{
+        backgroundColor: "#000",
+        padding: 8,
+        paddingRight: 18,
+        paddingLeft: 18,
+        borderRadius: 30,
+        justifyContent: "center",
+        alignItems: "center",
+        ...SHADOWS.First_block,
+        elevation: 6,
+      }}
+    >
+      <Text
+        style={{
+          fontFamily: FONTS.Ubuntu_M,
+          fontSize: 14,
+          color: "#fff",
+        }}
+      >
+        Place a Bid
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
 export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
   return (
@@ -21,6 +50,7 @@ const styles = (props) =>
       alignItems: "center",
       justifyContent: "center",
       ...SHADOWS.First_block,
+      elevation: 6,
       ...props,
     },
   });

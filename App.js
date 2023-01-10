@@ -31,7 +31,10 @@ const App = () => {
     Ubuntu_Italic: require("./assets/fonts/Ubuntu-Italic.ttf"),
     Ubuntu_Regular: require("./assets/fonts/Ubuntu-Regular.ttf"),
     Ubuntu_Medium: require("./assets/fonts/Ubuntu-Medium.ttf"),
+    Ubuntu_Bold: require("./assets/fonts/Ubuntu-Bold.ttf"),
     Akshar_Medium: require("./assets/fonts/Akshar-Medium.ttf"),
+    Font_Awesome_5_Solid: require("./assets/fonts/Font-Awesome-5-Free-Solid-900.otf"),
+    Font_Awesome_5_Brands_Regular_400: require("./assets/fonts/Font-Awesome-5-Brands-Regular-400.otf"),
   });
 
   if (!loaded) return null;
