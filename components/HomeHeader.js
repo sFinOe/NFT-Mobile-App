@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput, StyleSheet } from "react-native";
+import { View, Text, Image, TextInput, StyleSheet, KeyboardAvoidingView } from "react-native";
 import React from "react";
 import { COLORS, FONTS, NFTData, SHADOWS, SIZE } from "../constants";
 import assets from "../constants/assets";
@@ -74,8 +74,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 19,
     backgroundColor: COLORS.primary,
     width: "100%",
-    // flexDirection: "row",
-    // justifyContent: "space-between",
   },
   Account_field: {
     flexDirection: "row",
@@ -98,7 +96,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 12,
     paddingVertical: 8,
-    opacity: 222,
   },
 });
 
