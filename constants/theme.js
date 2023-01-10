@@ -16,34 +16,34 @@ export const SIZE = {
 
 export const FONTS = {
   ABeeZee: "ABeeZee_Regular",
+  ABeeZee_I: "ABeeZee_Iutalic",
   Akshar: "Akshar",
   Font_Awesome: "Font_Awesome_5_Regular",
   Ponnala: "Ponnala_Regular",
   Ubuntu: "Ubuntu_Regular",
   Ubuntu_M: "Ubuntu_Medium",
   Ubuntu_I: "Ubuntu_Italic",
+  Akshar_M: "Akshar_Medium",
 };
 
 export const SHADOWS = {
   First_block: {
-    shadowcolor: "#060101",
+    shadowColor: "#060101",
     shadowOffset: {
-      X: 41,
-      Y: 40,
+      width: 0,
+      height: 2,
     },
     shadowOpacity: 0.1,
-    Blur: 47,
-    Spread: 9,
+    shadowRadius: 2,
   },
 
   light: {
-    shadowcolor: COLORS.black,
+    shadowColor: COLORS.black,
     shadowOffset: {
-      X: 0,
-      Y: 0,
+      width: 0,
+      height: 2,
     },
     shadowOpacity: 0.25,
-    Blur: 20,
-    Spread: 0,
+    shadowRadius: 2,
   },
 };

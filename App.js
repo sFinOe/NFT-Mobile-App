@@ -31,6 +31,7 @@ const App = () => {
     Ubuntu_Italic: require("./assets/fonts/Ubuntu-Italic.ttf"),
     Ubuntu_Regular: require("./assets/fonts/Ubuntu-Regular.ttf"),
     Ubuntu_Medium: require("./assets/fonts/Ubuntu-Medium.ttf"),
+    Akshar_Medium: require("./assets/fonts/Akshar-Medium.ttf"),
   });
 
   if (!loaded) return null;

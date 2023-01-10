@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
-import { COLORS, NFTData, SHADOWS, SIZE } from "../constants";
+import { COLORS, FONTS, NFTData, SHADOWS, SIZE } from "../constants";
 import assets from "../constants/assets";
 
 export const NFTtitle = () => {
@@ -15,6 +15,31 @@ export const EthPrice = () => {
   return (
     <View>
       <Text>EthPrice</Text>
+    </View>
+  );
+};
+
+export const EndDate = () => {
+  return (
+    <View style={styles.endDate}>
+      <Text
+        style={{
+          fontFamily: FONTS.ABeeZee,
+          fontSize: 10,
+          color: "#464646",
+        }}
+      >
+        Ending In
+      </Text>
+      <Text
+        style={{
+          fontFamily: FONTS.Akshar_M,
+          fontSize: 15,
+          color: "#000",
+        }}
+      >
+        7h 24m
+      </Text>
     </View>
   );
 };
@@ -46,14 +71,6 @@ export const People = () => {
   );
 };
 
-export const EndDate = () => {
-  return (
-    <View>
-      <Text>EndDate</Text>
-    </View>
-  );
-};
-
 export const SubInfo = () => {
   return (
     <View style={styles.container}>
@@ -70,5 +87,16 @@ const styles = StyleSheet.create({
     marginTop: -20,
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  endDate: {
+    backgroundColor: "#fff",
+    paddingVertical: 8,
+    paddingHorizontal: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 15,
+    ...SHADOWS.light,
+    elevation: 4,
+    maxWidth: "50%",
   },
 });
