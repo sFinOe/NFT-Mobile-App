@@ -8,8 +8,8 @@ A User-interface Mobile App built with React Native (Beta).
 
 - Login and sign up screens
 - Bid Screen
-- NFT Details Screeen
-- And a Lot cool features comming-soon
+- NFT Details Screen
+- And a Lot cool features coming-soon
 
 # Getting Started
 

@@ -4,7 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { COLORS, NFTData, SHADOWS, SIZE } from "../constants";
 import assets from "../constants/assets";
 import { CircleButton } from "./Button";
-import { SubInfo } from "./NFT_info";
+import { NFTtitle, SubInfo } from "./NFT_info";
 
 const NFTcard = ({ data }) => {
   const navigation = useNavigation();
@@ -16,8 +16,10 @@ const NFTcard = ({ data }) => {
         <CircleButton imgUrl={assets.heart_icon} right={10} top={10} />
       </View>
       <View>
-        <SubInfo />
+        <SubInfo bids={data.bids} ending_time={data.ending_time} />
       </View>
+      <View style={{ width: "100%", padding: 10 }}></View>
+      <NFTtitle title={data.name} creator={data.creator} />
     </View>
   );
 };

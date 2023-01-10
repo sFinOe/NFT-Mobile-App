@@ -3,10 +3,10 @@ import React from "react";
 import { COLORS, FONTS, NFTData, SHADOWS, SIZE } from "../constants";
 import assets from "../constants/assets";
 
-export const NFTtitle = () => {
+export const NFTtitle = ({ title, creator }) => {
   return (
     <View>
-      <Text>NFTtitle</Text>
+      <Text>{title}</Text>
     </View>
   );
 };
@@ -19,7 +19,7 @@ export const EthPrice = () => {
   );
 };
 
-export const EndDate = () => {
+export const EndDate = ({ ending_time }) => {
   return (
     <View style={styles.endDate}>
       <Text
@@ -36,9 +36,10 @@ export const EndDate = () => {
           fontFamily: FONTS.Akshar_M,
           fontSize: 15,
           color: "#000",
+          paddingTop: 2,
         }}
       >
-        7h 24m
+        {ending_time}
       </Text>
     </View>
   );
@@ -61,21 +62,21 @@ export const ImgCmp = ({ imgUrl, index }) => {
   );
 };
 
-export const People = () => {
+export const People = ({ bids }) => {
   return (
     <View style={{ flexDirection: "row" }}>
-      {[assets.user_1, assets.user_2, assets.user_3].map((imgUrl, index) => (
-        <ImgCmp imgUrl={imgUrl} index={index} key={`User-${index}`} />
+      {bids.slice(0, 3).map((imgUrl, index) => (
+        <ImgCmp imgUrl={imgUrl.image} index={index} key={`User-${index}`} />
       ))}
     </View>
   );
 };
 
-export const SubInfo = () => {
+export const SubInfo = ({ bids, ending_time }) => {
   return (
     <View style={styles.container}>
-      <People />
-      <EndDate />
+      <People bids={bids} />
+      <EndDate ending_time={ending_time} />
     </View>
   );
 };
