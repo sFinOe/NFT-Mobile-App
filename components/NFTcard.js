@@ -13,18 +13,19 @@ const NFTcard = ({ data }) => {
     <View style={styles.container}>
       <View style={styles.cards}>
         <Image source={data.image} resizeMode="contain" style={styles.img_block} />
-        <CircleButton imgUrl={assets.heart_icon} right={15} top={18} />
+        <CircleButton imgUrl={assets.heart_icon} Width={20} Height={20} right={18} top={18} width={40} height={40} borderRadius={40 / 2} />
       </View>
       <View style={{ width: "100%", paddingBottom: 10 }}>
         <SubInfo bids={data.bids} ending_time={data.ending_time} />
         <View style={{ width: "100%", padding: 5 }}></View>
-        <NFTtitle title={data.name} creator={data.creator} />
+        <NFTtitle title={data.name} creator={data.creator} FontSize={17} FontSize_Creator={12} />
         <View style={styles.price_title}>
-          <EthPrice price={data.price} />
+          <EthPrice price={data.price} FontSize={16} />
           <BidButton
             handlePress={() => {
               navigation.navigate("Details", { data });
             }}
+            fontSize={14}
           />
         </View>
       </View>

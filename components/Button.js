@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 import React from "react";
 import { COLORS, FONTS, NFTData, SHADOWS, SIZE } from "../constants";
 
-export const BidButton = ({ handlePress, ...props }) => {
+export const BidButton = ({ handlePress, fontSize, ...props }) => {
   return (
     <TouchableOpacity
       onPress={handlePress}
@@ -15,13 +15,14 @@ export const BidButton = ({ handlePress, ...props }) => {
         justifyContent: "center",
         alignItems: "center",
         ...SHADOWS.First_block,
+        ...props,
         elevation: 6,
       }}
     >
       <Text
         style={{
           fontFamily: FONTS.Ubuntu_M,
-          fontSize: 14,
+          fontSize,
           color: "#fff",
         }}
       >
@@ -31,10 +32,10 @@ export const BidButton = ({ handlePress, ...props }) => {
   );
 };
 
-export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
+export const CircleButton = ({ imgUrl, handlePress, Width, Height, BorderR, ...props }) => {
   return (
     <TouchableOpacity style={styles(props).container} onPress={handlePress}>
-      <Image source={imgUrl} resizeMode="contain" style={{ width: 24, height: 24 }} />
+      <Image source={imgUrl} resizeMode="contain" style={{ width: Width, height: Height }} />
     </TouchableOpacity>
   );
 };
@@ -42,11 +43,10 @@ export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
 const styles = (props) =>
   StyleSheet.create({
     container: {
-      width: 40,
-      height: 40,
+      // width: 40,
+      // height: 40,
       backgroundColor: "#fff",
       position: "absolute",
-      borderRadius: 20,
       alignItems: "center",
       justifyContent: "center",
       ...SHADOWS.First_block,

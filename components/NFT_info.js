@@ -3,15 +3,15 @@ import React from "react";
 import { COLORS, FONTS, NFTData, SHADOWS, SIZE } from "../constants";
 import assets from "../constants/assets";
 
-export const NFTtitle = ({ title, creator }) => {
+export const NFTtitle = ({ title, creator, FontSize, FontSize_Creator }) => {
   return (
     <View>
       <Text
         style={{
           fontFamily: FONTS.Ubuntu_M,
-          fontSize: 17,
+          fontSize: FontSize,
           color: "#000",
-          paddingLeft: 15,
+          marginLeft: 13,
           paddingBottom: 3,
         }}
       >
@@ -20,9 +20,9 @@ export const NFTtitle = ({ title, creator }) => {
       <Text
         style={{
           fontFamily: FONTS.ABeeZee,
-          fontSize: 12,
+          fontSize: FontSize_Creator,
           color: "#464646",
-          paddingLeft: 15,
+          marginLeft: 13,
         }}
       >
         By {creator}
@@ -31,14 +31,14 @@ export const NFTtitle = ({ title, creator }) => {
   );
 };
 
-export const EthPrice = ({ price }) => {
+export const EthPrice = ({ price, FontSize, ...props }) => {
   return (
     <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <Image source={assets.ETH_icon} resizeMode="contain" style={{ width: 27, height: 27, marginLeft: 4 }} />
+      <Image source={assets.ETH_icon} resizeMode="contain" style={{ marginLeft: 4, ...props }} />
       <Text
         style={{
           fontFamily: FONTS.Ubuntu_M,
-          fontSize: 15,
+          fontSize: FontSize,
           color: "#000",
         }}
       >
@@ -64,7 +64,7 @@ export const EndDate = ({ ending_time }) => {
       <Text
         style={{
           fontFamily: FONTS.Akshar_M,
-          fontSize: 15,
+          fontSize: 19,
           color: "#000",
           paddingTop: 2,
         }}
@@ -81,10 +81,10 @@ export const ImgCmp = ({ imgUrl, index }) => {
       source={imgUrl}
       resizeMode="contain"
       style={{
-        width: 45,
-        height: 45,
+        width: 48,
+        height: 48,
         marginLeft: index == 0 ? 0 : -8,
-        borderRadius: 45 / 2,
+        borderRadius: 48 / 2,
         borderWidth: 2,
         borderColor: "#FFF",
       }}
