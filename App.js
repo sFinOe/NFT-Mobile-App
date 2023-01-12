@@ -5,9 +5,11 @@ import React, { useState } from "react";
 import { NavigationContainer, StackActions, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator, createStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
-import Home from "./screens/Home";
 import Login from "./screens/login";
 import Details from "./screens/Details";
+import HomeTab from "./components/HomeTab";
+
+const Stack = createNativeStackNavigator();
 
 const theme = {
   ...DefaultTheme,
@@ -19,8 +21,6 @@ const theme = {
 
 const App = () => {
   /* Staring From Here !!!!!! */
-
-  const Stack = createNativeStackNavigator();
 
   const [loaded] = useFonts({
     ABeeZee_Iutalic: require("./assets/fonts/ABeeZee-Italic.ttf"),
@@ -41,8 +41,8 @@ const App = () => {
 
   return (
     <NavigationContainer theme={theme}>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="HomeTab">
+        <Stack.Screen name="HomeTab" component={HomeTab} />
         <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>
     </NavigationContainer>

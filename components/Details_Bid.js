@@ -33,7 +33,7 @@ const styles = (index, Bid_Lenth) =>
       paddingBottom: 13,
       flexDirection: "row",
       // alignItems: "center",
-      marginBottom: index == Bid_Lenth - 1 ? 70 : 0,
+      marginBottom: index == Bid_Lenth - 1 ? 62 : 0,
     },
 
     top_bids: {

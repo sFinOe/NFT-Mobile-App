@@ -3,7 +3,7 @@ import React from "react";
 import { COLORS, FONTS, NFTData, SHADOWS, SIZE } from "../constants";
 import assets from "../constants/assets";
 
-const HomeHeader = () => {
+const HomeHeader = ({ OnSearch }) => {
   return (
     <View style={styles.Container}>
       <View style={styles.Account_field}>
@@ -61,7 +61,7 @@ const HomeHeader = () => {
             height: 25,
           }}
         />
-        <TextInput placeholder="Search NFTs" placeholderTextColor="#ccc" style={{ flex: 1, marginLeft: 10, color: "#fff" }} onChangeText={() => {}} />
+        <TextInput placeholder="Search NFTs" placeholderTextColor="#ccc" style={{ flex: 1, marginLeft: 10, color: "#fff" }} onChangeText={OnSearch} />
       </View>
     </View>
   );

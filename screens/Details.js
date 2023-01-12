@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Image, View, StyleSheet } from "react-native";
+import { Text, Image, View, StyleSheet, Animated } from "react-native";
 import { COLORS, FONTS, NFTData, SHADOWS, SIZE } from "../constants";
 import assets from "../constants/assets";
 import { FocusStatusBar, NFTcard, HomeHeader } from "../components";
@@ -7,7 +7,7 @@ import { SubInfo } from "../components/NFT_info";
 import { CircleButton, BidButton, Details_Bid, Details_Desc } from "../components";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FlatList } from "react-native-gesture-handler";
-import react from "react";
+import { LinearGradient } from "expo-linear-gradient";
 
 const DetailsHeader = ({ data, navigation }) => {
   return (
@@ -48,9 +48,9 @@ const Details = ({ route, navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <FocusStatusBar barStyle="dark-content" translucent={true} backgroundColor="#fff" />
-      <View style={styles.Bid_button}>
+      <LinearGradient colors={["rgba(255,255,255,0)", "rgba(255,255,255,1)"]} style={styles.Bid_button}>
         <BidButton marginBottom={23} paddingVertical={14} paddingLeft={32} paddingRight={32} fontSize={16} />
-      </View>
+      </LinearGradient>
       <FlatList
         data={data.bids}
         keyExtractor={(item) => item.id}
@@ -89,12 +89,11 @@ const styles = StyleSheet.create({
   Bid_button: {
     zIndex: 1,
     flex: 1,
-    position: "absolute",
     bottom: 0,
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.4)",
+    position: "absolute",
   },
 });
 
