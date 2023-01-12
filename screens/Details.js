@@ -54,7 +54,7 @@ const Details = ({ route, navigation }) => {
       <FlatList
         data={data.bids}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <Details_Bid data={item} />}
+        renderItem={({ item, index }) => <Details_Bid data={item} index={index} Bid_Lenth={data.bids.length} />}
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={
           <React.Fragment>
@@ -62,6 +62,18 @@ const Details = ({ route, navigation }) => {
             <SubInfo bids={data.bids} ending_time={data.ending_time} />
             <View style={{ paddingVertical: 18 }}>
               <Details_Desc data={data} />
+              {data.bids.length > 0 && (
+                <Text
+                  style={{
+                    fontFamily: FONTS.Ubuntu_M,
+                    fontSize: 14,
+                    color: "#000",
+                    paddingHorizontal: 14,
+                  }}
+                >
+                  Current Bid
+                </Text>
+              )}
             </View>
           </React.Fragment>
         }
@@ -75,13 +87,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   Bid_button: {
+    zIndex: 1,
     flex: 1,
     position: "absolute",
     bottom: 0,
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.8)",
+    backgroundColor: "rgba(255, 255, 255, 0.4)",
   },
 });
 
