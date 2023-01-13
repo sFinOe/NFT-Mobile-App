@@ -4,6 +4,7 @@ import { COLORS, NFTData } from "../constants";
 import { useNavigation } from "@react-navigation/native";
 import { FocusStatusBar, NFTcard, HomeHeader } from "../components";
 import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, FlatList, KeyboardAvoidingView } from "react-native";
+
 /*
 FocusStatusBar : contains bool is StatsBar is Focused or Not if Not Return NULL to Hide it
 */

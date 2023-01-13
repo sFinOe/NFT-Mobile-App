@@ -7,7 +7,19 @@ import heart_icon from "../assets/icons/heart_icon.png";
 import left_icon from "../assets/icons/left_icon.png";
 import search_icon from "../assets/icons/search_icon.png";
 import valid_icon from "../assets/icons/valid_icon.png";
-
+import Add_Circle from "../assets/icons/Add-Circle.png";
+import Favorite_Heart from "../assets/icons/Favorite-Heart.png";
+import Shopping_Cart_2 from "../assets/icons/Shopping-Cart-2.png";
+import Add_Square from "../assets/icons/Add-Square.png";
+import Home_3 from "../assets/icons/Home-3.png";
+import Signal_Square from "../assets/icons/Signal-Square.png";
+import Dashboard_Layout_3 from "../assets/icons/Dashboard-Layout-3.png";
+import Programming_Module_Three from "../assets/icons/Programming-Module-Three.png";
+import User_Circle from "../assets/icons/User-Circle.png";
+import Dashboard_Layout_Circle from "../assets/icons/Dashboard-Layout-Circle.png";
+import Setting_Cog from "../assets/icons/Setting-Cog.png";
+import Dashboard_Layout_Square from "../assets/icons/Dashboard-Layout-Square.png";
+import Shopping_Cart_1 from "../assets/icons/Shopping-Cart-1.png";
 /****** IMGAES ******/
 
 import nft_img_1 from "../assets/images/nft_img_1.jpg";
@@ -26,6 +38,19 @@ export default {
   left_icon,
   search_icon,
   valid_icon,
+  Add_Circle,
+  Dashboard_Layout_Circle,
+  Favorite_Heart,
+  Setting_Cog,
+  Shopping_Cart_1,
+  Shopping_Cart_2,
+  User_Circle,
+  Home_3,
+  Dashboard_Layout_Square,
+  Add_Square,
+  Signal_Square,
+  Dashboard_Layout_3,
+  Programming_Module_Three,
 
   nft_img_1,
   nft_img_2,

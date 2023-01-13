@@ -23,7 +23,8 @@
     "react": "18.1.0",
     "react-native": "0.70.5",
     "react-native-fading-edge": "^1.0.0",
-    "react-native-neomorph-shadows": "^1.1.2"
+    "react-native-neomorph-shadows": "^1.1.2",
+    "react-native-svg": "13.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3"
