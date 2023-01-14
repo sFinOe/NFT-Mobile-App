@@ -8,6 +8,7 @@ import { useFonts } from "expo-font";
 import Login from "./screens/login";
 import Details from "./screens/Details";
 import HomeTab from "./components/HomeTab";
+import Register from "./screens/Register";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,7 +42,9 @@ const App = () => {
 
   return (
     <NavigationContainer theme={theme}>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="HomeTab">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Login">
+        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="HomeTab" component={HomeTab} />
         <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>

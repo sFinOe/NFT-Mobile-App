@@ -7,16 +7,8 @@ const HomeHeader = ({ OnSearch }) => {
   return (
     <View style={styles.Container}>
       <View style={styles.Account_field}>
-        <View style={{ justifyContent: "space-between", flexDirection: "row" }}>
-          <Image
-            source={assets.valid_icon}
-            resizeMode="contain"
-            style={{
-              width: 30,
-              height: 30,
-            }}
-          />
-          <Text style={{ color: "#fff", fontFamily: FONTS.Ubuntu_M, fontSize: 18 }}>ProNef</Text>
+        <View style={{ justifyContent: "space-between", flexDirection: "row", marginLeft: -2, alignItems: "center" }}>
+          <Image source={assets.logo_inside} resizeMode="contain" style={{ width: 150, height: 50, marginLeft: -8 }} />
         </View>
         <Image
           source={assets.account_1}

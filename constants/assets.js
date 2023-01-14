@@ -20,6 +20,9 @@ import Dashboard_Layout_Circle from "../assets/icons/Dashboard-Layout-Circle.png
 import Setting_Cog from "../assets/icons/Setting-Cog.png";
 import Dashboard_Layout_Square from "../assets/icons/Dashboard-Layout-Square.png";
 import Shopping_Cart_1 from "../assets/icons/Shopping-Cart-1.png";
+
+import red_circle from "../assets/icons/red_circle.png";
+
 /****** IMGAES ******/
 
 import nft_img_1 from "../assets/images/nft_img_1.jpg";
@@ -31,6 +34,11 @@ import user_2 from "../assets/images/user_2.png";
 import user_3 from "../assets/images/user_3.png";
 
 import account_1 from "../assets/images/account-1.jpg";
+
+/******** LOGOs *********/
+
+import logo_inside from "../assets/images/logos/nftake.png";
+import logo_500 from "../assets/images/logos/logo_500.png";
 
 export default {
   ETH_icon,
@@ -51,6 +59,7 @@ export default {
   Signal_Square,
   Dashboard_Layout_3,
   Programming_Module_Three,
+  red_circle,
 
   nft_img_1,
   nft_img_2,
@@ -61,4 +70,7 @@ export default {
   user_3,
 
   account_1,
+
+  logo_inside,
+  logo_500,
 };

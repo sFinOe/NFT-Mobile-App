@@ -1,8 +1,7 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/Home";
-import Login from "../screens/login";
 import { COLORS, NFTData, SHADOWS, SIZE, FONTS, ETH_icon } from "../constants";
 import assets from "../constants/assets";
 import { LinearGradient } from "expo-linear-gradient";
@@ -13,12 +12,28 @@ import New_nft from "../screens/New_nft";
 
 const Tab = createBottomTabNavigator();
 
+const TabBarBotton = ({ children, onPress }) => (
+  <TouchableOpacity
+    style={{
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+    onPress={onPress}
+  >
+    <View
+      style={{ width: 58, height: 58, borderRadius: 35, backgroundColor: "#fff", marginBottom: 50, ...SHADOWS.light, elevation: 12, opacity: 0.99 }}
+    >
+      {children}
+    </View>
+  </TouchableOpacity>
+);
+
 const HomeTab = () => {
   return (
     <Tab.Navigator
       screenOptions={{
         tabBarStyle: {
-          height: 65,
+          height: 55,
           position: "absolute",
           bottom: 20,
           left: 30,
@@ -38,7 +53,11 @@ const HomeTab = () => {
         options={{
           tabBarIcon: ({ focused }) => (
             <View>
-              <Image source={assets.Home_3} resizeMode="contain" style={{ width: 20, height: 20, tintColor: focused ? "#F24" : "#14213d" }} />
+              <Image
+                source={assets.Home_3}
+                resizeMode="contain"
+                style={{ width: focused ? 25 : 23, height: focused ? 25 : 23, tintColor: focused ? "#F24" : "#14213d", marginLeft: 10 }}
+              />
             </View>
           ),
         }}
@@ -52,7 +71,7 @@ const HomeTab = () => {
               <Image
                 source={assets.Shopping_Cart_2}
                 resizeMode="contain"
-                style={{ width: 20, height: 20, tintColor: focused ? "#F24" : "#14213d" }}
+                style={{ width: focused ? 25 : 23, height: focused ? 25 : 23, tintColor: focused ? "#F24" : "#14213d" }}
               />
             </View>
           ),
@@ -63,10 +82,9 @@ const HomeTab = () => {
         component={New_nft}
         options={{
           tabBarIcon: ({ focused }) => (
-            <View>
-              <Image source={assets.Add_Square} resizeMode="contain" style={{ width: 20, height: 20, tintColor: focused ? "#F24" : "#14213d" }} />
-            </View>
+            <Image source={assets.Add_Square} resizeMode="contain" style={{ width: 45, height: 45, tintColor: "#f24", borderRadius: 65 / 2 }} />
           ),
+          tabBarButton: (props) => <TabBarBotton {...props} />,
         }}
       />
       <Tab.Screen
@@ -75,7 +93,11 @@ const HomeTab = () => {
         options={{
           tabBarIcon: ({ focused }) => (
             <View>
-              <Image source={assets.Favorite_Heart} resizeMode="contain" style={{ width: 20, height: 20, tintColor: focused ? "#F24" : "#14213d" }} />
+              <Image
+                source={assets.Favorite_Heart}
+                resizeMode="contain"
+                style={{ width: focused ? 25 : 23, height: focused ? 25 : 23, tintColor: focused ? "#F24" : "#14213d" }}
+              />
             </View>
           ),
         }}
@@ -86,7 +108,11 @@ const HomeTab = () => {
         options={{
           tabBarIcon: ({ focused }) => (
             <View>
-              <Image source={assets.User_Circle} resizeMode="contain" style={{ width: 20, height: 20, tintColor: focused ? "#F24" : "#14213d" }} />
+              <Image
+                source={assets.User_Circle}
+                resizeMode="contain"
+                style={{ width: focused ? 25 : 23, height: focused ? 25 : 23, tintColor: focused ? "#F24" : "#14213d", marginRight: 10 }}
+              />
             </View>
           ),
         }}
