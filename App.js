@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView, Keyboard } from "react-native";
 import Task from "./components/Task";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavigationContainer, StackActions, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator, createStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
@@ -9,7 +9,6 @@ import Login from "./screens/login";
 import Details from "./screens/Details";
 import HomeTab from "./components/HomeTab";
 import Register from "./screens/Register";
-
 const Stack = createNativeStackNavigator();
 
 const theme = {
@@ -22,6 +21,35 @@ const theme = {
 
 const App = () => {
   /* Staring From Here !!!!!! */
+
+  // const [data, setData] = useState([]);
+  // const [LoadingData, setLoadingData] = useState(false);
+
+  // /*******  fetch from server database  *********/
+
+  // const fetchData = async (type, id) => {
+  //   try {
+  //     const response = await fetch(`http://10.30.114.187:8383/${type}`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         id: id,
+  //       }),
+  //     });
+  //     const data = await response.json();
+  //     setData(data);
+  //     setLoadingData(true);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchData("select", "6");
+  // }, []);
+  // /**************************/
 
   const [loaded] = useFonts({
     ABeeZee_Iutalic: require("./assets/fonts/ABeeZee-Italic.ttf"),
@@ -51,7 +79,5 @@ const App = () => {
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({});
 
 export default App;

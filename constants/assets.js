@@ -20,6 +20,8 @@ import Dashboard_Layout_Circle from "../assets/icons/Dashboard-Layout-Circle.png
 import Setting_Cog from "../assets/icons/Setting-Cog.png";
 import Dashboard_Layout_Square from "../assets/icons/Dashboard-Layout-Square.png";
 import Shopping_Cart_1 from "../assets/icons/Shopping-Cart-1.png";
+import hide_eye from "../assets/icons/hide_eye.png";
+import open_eye from "../assets/icons/open_eye.png";
 
 import red_circle from "../assets/icons/red_circle.png";
 
@@ -60,6 +62,8 @@ export default {
   Dashboard_Layout_3,
   Programming_Module_Three,
   red_circle,
+  hide_eye,
+  open_eye,
 
   nft_img_1,
   nft_img_2,

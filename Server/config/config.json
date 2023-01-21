@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "123456789",
+    "database": "mydb",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "squi_tgaterlog",
+    "password": "Cpgtkm7luHCzb+I9",
+    "database": "squi_trygo",
+    "host": "150.136.149.95",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

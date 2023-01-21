@@ -6,6 +6,8 @@ import { auth } from "../db_firebase";
 import HomeTab from "../components/HomeTab";
 import { COLORS, FONTS, NFTData, SHADOWS, SIZE, assets } from "../constants";
 import Register from "./Register";
+import { getUser } from "../database/autorisation";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Login = () => {
   const navigation = useNavigation();
@@ -14,17 +16,20 @@ const Login = () => {
   // [<getter>, <setter>] = useState(<initialValue>).
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [hide_pass, setHide_pass] = useState(false);
+  const [valid_login, setValid_login] = useState(false);
 
   /*useEffect is a hook that allows you to perform side effects in function components.
 	It is called after the component renders, use can use [] as secound argument to call it once*/
   useEffect(() => {
-    const unsub = auth.onAuthStateChanged((user) => {
-      if (user) {
-        navigation.replace("Register");
+    const checkLogin = async () => {
+      const token = await AsyncStorage.getItem("token");
+      console.log(token);
+      if (token) {
+        navigation.replace("HomeTab");
       }
-    });
-    // if you leave the screen, unsubscribe from the listener
-    return unsub;
+    };
+    checkLogin();
   }, []);
 
   const handlesignup = () => {
@@ -38,11 +43,22 @@ const Login = () => {
       .catch((error) => alert(error.message));
   };
 
-  const handlesignin = () => {
-    auth.signInWithEmailAndPassword(email, password).then((userdata) => {
-      const user = userdata.user;
-    });
-  };
+  function clean_email(email) {
+    const eemail = email.toLowerCase().trim();
+    return eemail;
+  }
+
+  async function handlesignin() {
+    let user = await getUser("login", clean_email(email), password);
+    if (user.data.authorisation) {
+      AsyncStorage.setItem("token", user.data.token);
+      AsyncStorage.setItem("id", String(user.data.id));
+      AsyncStorage.setItem("auth", "true");
+      setValid_login(true);
+    } else {
+      console.alert("NOT Unauthorized");
+    }
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -71,7 +87,7 @@ const Login = () => {
             Find you dream NFT art
           </Text>
         </View>
-        <View style={styles.SignIn}>
+        <View style={styles.email_style}>
           <TextInput
             placeholder="Email"
             value={email}
@@ -80,14 +96,23 @@ const Login = () => {
             onChangeText={setEmail}
           />
         </View>
-        <View style={styles.SignUp}>
+        <View style={styles.password_style}>
           <TextInput
             placeholder="Password"
             value={password}
-            style={{ paddingLeft: 12, color: "#000" }}
+            style={{ paddingLeft: 12, color: "#000", width: "80%" }}
+            secureTextEntry={hide_pass ? false : true}
             placeholderTextColor="#5C5B5B"
             onChangeText={setPassword}
           />
+          <TouchableOpacity
+            style={{ paddingRight: 10 }}
+            onPress={() => {
+              setHide_pass(!hide_pass);
+            }}
+          >
+            <Image source={hide_pass ? assets.open_eye : assets.hide_eye} resizeMode="contain" style={{ width: 40, height: 30 }} />
+          </TouchableOpacity>
         </View>
         <View>
           <TouchableOpacity style={styles.login} onPress={handlesignin}>
@@ -153,7 +178,7 @@ const styles = StyleSheet.create({
     marginTop: 3,
     // bottom: 65,
   },
-  SignIn: {
+  email_style: {
     width: "90%",
     backgroundColor: "#F0ECF1",
     marginHorizontal: "5%",
@@ -162,13 +187,16 @@ const styles = StyleSheet.create({
     marginTop: "8%",
   },
 
-  SignUp: {
+  password_style: {
     width: "90%",
     backgroundColor: "#F0ECF1",
     marginHorizontal: "5%",
     paddingVertical: 15,
     borderRadius: 8,
     marginTop: "4%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   login: {
     width: "90%",
